@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="index.css">
 
-        <title>Cadastro</title>
+        <title>Inativar</title>
     </head>
     <body>
         <!-- The core Firebase JS SDK is always  and must be listed first -->
@@ -48,99 +48,17 @@
                                                     <img src="./direto_com_doutor.png" alt="Direto com Doutor" class="rounded mx-auto d-block"  style="height: 100%; width: 250px; display: block;">
                                                 </div>
                                                 <div class="card-body">
-                                                    <!-- <form name="my-form" onsubmit="return validform()" method=""> -->
-                                                    <form name="my-form" onsubmit="return sendData()" method="">
-                                                        <div class="form-group row">
-                                                            <label for="person_type" class="col-md-4 col-form-label text-md-right">Tipo do beneficiário</label>
-                                                            <div class="col-md-6">
-                                                                <Select id="person_type" class="form-control" name="person_type" onchange="checkDependente()" required>
-                                                                    <option value="" selected>Escolha...</option>
-                                                                    <option value="1">Títular</option>
-                                                                    <option value="2">Dependente</option>
-                                                                </Select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group row">
-                                                            <label for="cpfcnpj" class="col-md-4 col-form-label text-md-right">CPF do titular (somente números)*</label>
-                                                            <div class="col-md-6">
-                                                                <input type="text" id="cpfcnpj" class="form-control" name="cpfcnpj" required oninvalid="this.setCustomValidity('Este campo não pode ficar em branco')" oninput="setCustomValidity('')">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group row">
-                                                            <label for="nome" class="col-md-4 col-form-label text-md-right">Nome completo do beneficiário*</label>
-                                                            <div class="col-md-6">
-                                                                <input type="text" id="nome" class="form-control" name="nome" required oninvalid="this.setCustomValidity('Este campo não pode ficar em branco')" oninput="setCustomValidity('')">
-                                                            </div>
-                                                        </div>
-
-                                                        <div id="dependant_div" class="form-group row" style="display: none;">
-                                                            <label for="cpf_dependente" class="col-md-4 col-form-label text-md-right">CPF do dependente (somente números)*</label>
-                                                            <div class="col-md-6">
-                                                                <input type="text" id="cpf_dependente" class="form-control" name="cpf_dependente">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group row">
-                                                            <label for="birthday" class="col-md-4 col-form-label text-md-right">Data de nascimento</label>
-                                                            <div class="col-md-6">
-                                                                <input type="date" id="birthday" class="form-control" name="birthday" required oninvalid="this.setCustomValidity('Este campo não pode ficar em branco')" oninput="setCustomValidity('')">
-                                                            </div>
-                                                        </div>
-            
-                                                        <div class="form-group row">
-                                                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail</label>
-                                                            <div class="col-md-6">
-                                                                <input type="email" id="email" class="form-control" name="email">
-                                                            </div>
-                                                        </div>
-                        
-                                                        <div class="form-group row">
-                                                            <label for="phone" class="col-md-4 col-form-label text-md-right">Número do celular ((somente números e com DDD)</label>
-                                                            <div class="col-md-6">
-                                                                <input type="text" id="phone" class="form-control" name="phone">
-                                                            </div>
-                                                        </div>
-                        
-                        
-                                                        <div id="plan_div" class="form-group row">
-                                                            <label for="plan" class="col-md-4 col-form-label text-md-right">Plano</label>
-                                                            <div class="col-md-6">
-                                                                <Select id="plan" class="form-control" name="plan" required>
-                                                                    <option value="" selected>Escolha...</option>
-                                                                    <option value="57">Familiar</option>
-                                                                    <option value="58">Individual</option>
-                                                                </Select>
-                                                            </div>
-                                                        </div>
-                                                                    
-                                                        <div class="form-group row">
-                                                            <label for="sex" class="col-md-4 col-form-label text-md-right">Sexo</label>
-                                                            <div class="col-md-6">
-                                                                <Select id="sex" class="form-control" name="sex" required>
-                                                                    <option value="" selected>Escolha...</option>
-                                                                    <option value="M">Masculino</option>
-                                                                    <option value="F">Feminino</option>
-                                                                </Select>
-                                                            </div>
-                                                        </div>
-            
-                                                        <!-- <div class="form-group row">
-                                                            <label for="nid_number" class="col-md-4 col-form-label text-md-right"><abbr
-                                                                        title="National Id Card">NID</abbr> Number</label>
-                                                            <div class="col-md-6">
-                                                                <input type="text" id="nid_number" class="form-control" name="nid-number">
-                                                            </div>
-                                                        </div> -->
-                        
-                                                            <div class="col-md-6 offset-md-4">
-                                                                <button type="submit" class="btn btn-primary">
-                                                                    Cadastrar
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </form>
+                                                    <label for="list" class="col-md-12 col-form-label text-md-left">Lista de usuários cadastrados</label>
+                                                    <div class="col-md-12">
+                                                        <Select id="list" class="form-control" name="list">
+                                                            <option value="" selected>Escolha...</option>
+                                                        </Select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 offset-md-5">
+                                                    <button onclick="sendData()" class="btn btn-primary">
+                                                        Inativar
+                                                    </button>
                                                 </div>
                                             </div>
                                     </div>
