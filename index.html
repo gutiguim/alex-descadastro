@@ -48,14 +48,17 @@
                                                     <img src="./direto_com_doutor.png" alt="Direto com Doutor" class="rounded mx-auto d-block"  style="height: 100%; width: 250px; display: block;">
                                                 </div>
                                                 <div class="card-body">
-                                                    <label for="list" class="col-md-12 col-form-label text-md-left">Lista de usuários cadastrados</label>
+                                                    <label for="list" class="col-md-12 col-form-label text-md-left">Lista de usuários cadastrados ativos</label>
                                                     <div class="col-md-12">
                                                         <Select id="list" class="form-control" name="list">
                                                             <option value="" selected>Escolha...</option>
                                                         </Select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 offset-md-5">
+                                                <div class="col-md-6 offset-md-4">
+                                                    <button onclick="showData()" class="btn btn-primary">
+                                                        Mostrar
+                                                    </button>
                                                     <button onclick="sendData()" class="btn btn-primary">
                                                         Inativar
                                                     </button>
@@ -64,8 +67,33 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-8">
+                                                <div class="card rounded-top-left rounded-bottom-right">
+                                                    <div class="card-body">
+                                                        <label for="list_inactive" class="col-md-12 col-form-label text-md-left">Lista de usuários cadastrados inativos</label>
+                                                        <div class="col-md-12">
+                                                            <Select id="list_inactive" class="form-control" name="list_inactive">
+                                                                <option value="" selected>Escolha...</option>
+                                                            </Select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 offset-md-4">
+                                                        <button onclick="showDataActivate()" class="btn btn-primary">
+                                                            Mostrar
+                                                        </button>
+                                                        <button onclick="sendDataActivate()" class="btn btn-primary">
+                                                            Ativar
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
                         
-                        </main>
+                    </main>
                     <!-- Footer -->
                     <footer class="footer">
                         <div class="container justify-content-center text-center">
