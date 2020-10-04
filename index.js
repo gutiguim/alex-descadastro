@@ -1,28 +1,32 @@
 $(document).ready(function(){
-    // Create a root reference
-    var ref = firebase.storage();
-    var storageRef = ref.ref();
-
-    storageRef.child("Ativos/").listAll().then(function(res) {
-        res.items.forEach(function(itemRef) {
-            fillUserList(itemRef);
-        });
-        console.log(userList)
-    }).catch(function(error) {
-        console.log(error);
-    });
-    
-    var storageRef2 = ref.ref();
-
-    storageRef2.child("Inativos/").listAll().then(function(res) {
-        res.items.forEach(function(itemRef) {
-            fillUserListInactives(itemRef);
-        });
-        console.log(userListInactive);
-    }).catch(function(error) {
-        console.log(error);
-    });
+    getUsersFromFirebase();
 });
+
+function getUsersFromFirebase() {
+        // Create a root reference
+        var ref = firebase.storage();
+        var storageRef = ref.ref();
+    
+        storageRef.child("Ativos/").listAll().then(function(res) {
+            res.items.forEach(function(itemRef) {
+                fillUserList(itemRef);
+            });
+            console.log(userList)
+        }).catch(function(error) {
+            console.log(error);
+        });
+        
+        var storageRef2 = ref.ref();
+    
+        storageRef2.child("Inativos/").listAll().then(function(res) {
+            res.items.forEach(function(itemRef) {
+                fillUserListInactives(itemRef);
+            });
+            console.log(userListInactive);
+        }).catch(function(error) {
+            console.log(error);
+        });
+}
 
 var userList = [];
 var userListInactive = []
@@ -30,6 +34,7 @@ var select = document.getElementById("list");
 var select_inactives = document.getElementById("list_inactive");
 
 function fillUserListInactives(data) {
+    userListInactive = [];
     // console.log(data);
     userList.push({
         name: data.location.path,
@@ -45,6 +50,7 @@ function fillUserListInactives(data) {
 }
 
 function fillUserList(data) {
+    userList = [];
     // console.log(data);
     userList.push({
         name: data.location.path,
@@ -147,6 +153,7 @@ function sendData() {
                 // console.log(JSON.parse(reader.result));
                 pathReference.delete().then(function() {
                     console.log("Deletado da lista de ativos");
+                    getUsersFromFirebase();
                 }).catch(function(error) {
                     console.log("Erro ao deletar");
                 });
@@ -184,6 +191,7 @@ function sendDataActivate() {
                 // console.log(JSON.parse(reader.result));
                 pathReference.delete().then(function() {
                     console.log("Deletado da lista de inativos");
+                    getUsersFromFirebase();
                 }).catch(function(error) {
                     console.log("Erro ao deletar");
                 });
